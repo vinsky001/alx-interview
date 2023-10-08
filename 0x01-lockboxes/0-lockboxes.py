@@ -22,7 +22,7 @@ def canUnlockAll(boxes):
     keys = boxes[0]
     # Loop through the list of keys and add new keys to keys list
     for key in keys:
-        if key not in visited:
+        if key >= 0 and key < len(boxes) and key not in visited:
             visited.add(key)
             # Add new keys to keys list
             new_keys = [k for k in boxes[key] if k not in visited]

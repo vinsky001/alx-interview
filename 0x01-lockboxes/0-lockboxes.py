@@ -25,8 +25,8 @@ def canUnlockAll(boxes):
         if key not in visited:
             visited.add(key)
             # Add new keys to keys list
-            keys.extend(boxes[key])
-    return len(visited) == len(boxes)
+            new_keys = [k for k in boxes[key] if k not in visited]
+            keys.extend(new_keys)
 
 
 if __name__ == '__main__':
